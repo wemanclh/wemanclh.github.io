@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://west888.gitee.io">
-  <title>postgre下位展开写法 | LH.Chen的博客</title>
+  <title>Hexo添加必力评论系统 | LH.Chen的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="参考代码12345678910111213141516171819WITH RECURSIVE T AS(SELECT p_org_type        , p_org_cd		, c_org_type		, c_org_cd   FROM com_int_orgstrc  WHERE p_org_type &#x3D; &#39;387&#39;    AND p_org_cd &#x3D;">
+  <meta name="description" content="1. 主题配置添加来必力修改 hexo 博客目录的 theme&#x2F;yilia 中的 _config.yml 文件，增加如下配置： livere 来必力。将 false 改为自己的uid则启用该评论系统。livere_uid: false 12# livere 来必力。将 false 改为自己的uid则启用该评论系统。livere_uid: false">
 <meta property="og:type" content="article">
-<meta property="og:title" content="postgre下位展开写法">
-<meta property="og:url" content="https://west888.gitee.io/2018/06/24/postgre%E4%B8%8B%E4%BD%8D%E5%B1%95%E5%BC%80%E5%86%99%E6%B3%95/index.html">
+<meta property="og:title" content="Hexo添加必力评论系统">
+<meta property="og:url" content="https://west888.gitee.io/2020/03/25/Hexo%E6%B7%BB%E5%8A%A0%E5%BF%85%E5%8A%9B%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/index.html">
 <meta property="og:site_name" content="LH.Chen的博客">
-<meta property="og:description" content="参考代码12345678910111213141516171819WITH RECURSIVE T AS(SELECT p_org_type        , p_org_cd		, c_org_type		, c_org_cd   FROM com_int_orgstrc  WHERE p_org_type &#x3D; &#39;387&#39;    AND p_org_cd &#x3D;">
+<meta property="og:description" content="1. 主题配置添加来必力修改 hexo 博客目录的 theme&#x2F;yilia 中的 _config.yml 文件，增加如下配置： livere 来必力。将 false 改为自己的uid则启用该评论系统。livere_uid: false 12# livere 来必力。将 false 改为自己的uid则启用该评论系统。livere_uid: false">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2018-06-24T01:35:58.000Z">
-<meta property="article:modified_time" content="2020-03-25T03:10:24.230Z">
+<meta property="article:published_time" content="2020-03-25T05:15:58.000Z">
+<meta property="article:modified_time" content="2020-03-25T05:49:19.922Z">
 <meta property="article:author" content="LH.Chen">
-<meta property="article:tag" content="Postgre">
+<meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="LH.Chen的博客" type="application/atom+xml">
@@ -159,27 +159,71 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-postgre下位展开写法" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Hexo添加必力评论系统" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      postgre下位展开写法
+      Hexo添加必力评论系统
     </h1>
   
 
         
-        <a href="/2018/06/24/postgre%E4%B8%8B%E4%BD%8D%E5%B1%95%E5%BC%80%E5%86%99%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2018-06-24T01:35:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-24</time>
+        <a href="/2020/03/25/Hexo%E6%B7%BB%E5%8A%A0%E5%BF%85%E5%8A%9B%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/" class="archive-article-date">
+  	<time datetime="2020-03-25T05:15:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">WITH RECURSIVE T AS</span><br><span class="line">(SELECT p_org_type</span><br><span class="line">        , p_org_cd</span><br><span class="line">		, c_org_type</span><br><span class="line">		, c_org_cd</span><br><span class="line">   FROM com_int_orgstrc</span><br><span class="line">  WHERE p_org_type &#x3D; &#39;387&#39;</span><br><span class="line">    AND p_org_cd &#x3D; &#39;0000&#39;</span><br><span class="line"> UNION ALL</span><br><span class="line"> SELECT a.p_org_type</span><br><span class="line">        , a.p_org_cd</span><br><span class="line">		, a.c_org_type</span><br><span class="line">		, a.c_org_cd</span><br><span class="line">   FROM com_int_orgstrc a</span><br><span class="line">        , T b</span><br><span class="line">  WHERE a.p_org_type &#x3D; b.c_org_type</span><br><span class="line">    AND a.p_org_cd &#x3D; b.c_org_cd</span><br><span class="line">)</span><br><span class="line">SELECT * FROM T</span><br></pre></td></tr></table></figure>
+        <h2 id="1-主题配置添加来必力"><a href="#1-主题配置添加来必力" class="headerlink" title="1. 主题配置添加来必力"></a>1. 主题配置添加来必力</h2><p>修改 hexo 博客目录的 theme/yilia 中的 _config.yml 文件，增加如下配置：</p>
+<h1 id="livere-来必力。将-false-改为自己的uid则启用该评论系统。"><a href="#livere-来必力。将-false-改为自己的uid则启用该评论系统。" class="headerlink" title="livere 来必力。将 false 改为自己的uid则启用该评论系统。"></a>livere 来必力。将 false 改为自己的uid则启用该评论系统。</h1><p>livere_uid: false</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># livere 来必力。将 false 改为自己的uid则启用该评论系统。</span><br><span class="line">livere_uid: false</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h2 id="2-新增来必力评论代码文件"><a href="#2-新增来必力评论代码文件" class="headerlink" title="2. 新增来必力评论代码文件"></a>2. 新增来必力评论代码文件</h2><p>在 yilia 中的 layout/_partial/post 下新增 livere.ejs文件，内容如下：</p>
+<!-- 来必力City版安装代码 -->
+
+<div id="lv-container" data-id="city" data-uid="<%=theme.livere_uid%>">
+
+<script type="text/javascript">
+
+   (function(d, s) {
+
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+
+   })(document, 'script');
+
+</script>
+
+<p><noscript> 为正常使用来必力评论功能请激活JavaScript</noscript></p>
+</div>
+
+<!-- City版安装代码已完成 -->
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 来必力City版安装代码 --&gt;</span><br><span class="line">&lt;div id&#x3D;&quot;lv-container&quot; data-id&#x3D;&quot;city&quot; data-uid&#x3D;&quot;&lt;%&#x3D;theme.livere_uid%&gt;&quot;&gt;</span><br><span class="line">	&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">   (function(d, s) &#123;</span><br><span class="line">       var j, e &#x3D; d.getElementsByTagName(s)[0];</span><br><span class="line"></span><br><span class="line">       if (typeof LivereTower &#x3D;&#x3D;&#x3D; &#39;function&#39;) &#123; return; &#125;</span><br><span class="line"></span><br><span class="line">       j &#x3D; d.createElement(s);</span><br><span class="line">       j.src &#x3D; &#39;https:&#x2F;&#x2F;cdn-city.livere.com&#x2F;js&#x2F;embed.dist.js&#39;;</span><br><span class="line">       j.async &#x3D; true;</span><br><span class="line"></span><br><span class="line">       e.parentNode.insertBefore(j, e);</span><br><span class="line">   &#125;)(document, &#39;script&#39;);</span><br><span class="line">	&lt;&#x2F;script&gt;</span><br><span class="line">&lt;noscript&gt; 为正常使用来必力评论功能请激活JavaScript&lt;&#x2F;noscript&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;!-- City版安装代码已完成 --&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-修改-article-ejs"><a href="#3-修改-article-ejs" class="headerlink" title="3. 修改 article.ejs"></a>3. 修改 article.ejs</h2><p>修改 yilia 中的 layout/_partial/article.ejs 文件，在 &lt;% if (!index &amp;&amp; post.comments){ %&gt; 后的任意一个评论代码前或后插入如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    &lt;%if (theme.livere_uid) &#123; %&gt;</span><br><span class="line"></span><br><span class="line">      &lt;%- partial(&#39;post&#x2F;livere&#39;) %&gt;</span><br><span class="line"></span><br><span class="line">    &lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>如上三步，修改完成。如果要启用，修改主题的 _config.yml 文件，将 livere_uid 的值改为自己的来必力 uid 即可，注意冒号之后有空格。</p>
+<hr>
+<p>版权声明：本文为CSDN博主「貌似掉线」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。</p>
+<p>原文链接：<a href="https://blog.csdn.net/maosidiaoxian/article/details/90902494" target="_blank" rel="noopener">https://blog.csdn.net/maosidiaoxian/article/details/90902494</a></p>
 
       
 
@@ -219,7 +263,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Postgre</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
         		</li>
       		
 		</ul>
@@ -275,7 +319,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://qr.topscan.com/api.php?text=https://west888.gitee.io/2018/06/24/postgre%E4%B8%8B%E4%BD%8D%E5%B1%95%E5%BC%80%E5%86%99%E6%B3%95/" alt="微信分享二维码">
+      <img src="http://qr.topscan.com/api.php?text=https://west888.gitee.io/2020/03/25/Hexo%E6%B7%BB%E5%8A%A0%E5%BF%85%E5%8A%9B%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -289,18 +333,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/06/24/psql%E7%94%A8%E6%B3%95-20200324/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          psql用法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/08/15/C#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6%E5%92%8C%E5%A7%94%E6%89%98/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">C#自定义事件和委托</div>
+    <a href="/2020/03/25/hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0github/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hexo博客部署到github</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -327,7 +362,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#参考代码"><span class="toc-number">1.</span> <span class="toc-text">参考代码</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-主题配置添加来必力"><span class="toc-number">1.</span> <span class="toc-text">1. 主题配置添加来必力</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#livere-来必力。将-false-改为自己的uid则启用该评论系统。"><span class="toc-number"></span> <span class="toc-text">livere 来必力。将 false 改为自己的uid则启用该评论系统。</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-新增来必力评论代码文件"><span class="toc-number">1.</span> <span class="toc-text">2. 新增来必力评论代码文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-修改-article-ejs"><span class="toc-number">2.</span> <span class="toc-text">3. 修改 article.ejs</span></a></li></ol>
                     </div>
                 </span>
             </div>
