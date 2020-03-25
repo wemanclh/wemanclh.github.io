@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: C# | LH.Chen的博客</title>
+  <title>postgre下位展开写法 | LH.Chen的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="LH.Chen的博客">
-<meta property="og:url" content="http://yoursite.com/tags/C/index.html">
+  <meta name="description" content="参考代码12345678910111213141516171819WITH RECURSIVE T AS(SELECT p_org_type        , p_org_cd		, c_org_type		, c_org_cd   FROM com_int_orgstrc  WHERE p_org_type &#x3D; &#39;387&#39;    AND p_org_cd &#x3D;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="postgre下位展开写法">
+<meta property="og:url" content="http://yoursite.com/2018/06/24/postgre%E4%B8%8B%E4%BD%8D%E5%B1%95%E5%BC%80%E5%86%99%E6%B3%95/index.html">
 <meta property="og:site_name" content="LH.Chen的博客">
+<meta property="og:description" content="参考代码12345678910111213141516171819WITH RECURSIVE T AS(SELECT p_org_type        , p_org_cd		, c_org_type		, c_org_cd   FROM com_int_orgstrc  WHERE p_org_type &#x3D; &#39;387&#39;    AND p_org_cd &#x3D;">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-06-24T01:35:58.000Z">
+<meta property="article:modified_time" content="2020-03-25T03:10:24.230Z">
 <meta property="article:author" content="LH.Chen">
+<meta property="article:tag" content="Postgre">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="LH.Chen的博客" type="application/atom+xml">
@@ -154,146 +159,189 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-postgre下位展开写法" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/08/%E9%82%A3%E4%BA%9B%E5%B9%B4%E6%88%91%E8%BF%98%E4%B8%8D%E6%87%82IList%EF%BC%8CICollection%EF%BC%8CIEnumerable%EF%BC%8CIEnumerator%EF%BC%8CIQueryable/" class="archive-article-date">
-  	<time datetime="2019-09-08T05:15:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-08</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/08/%E9%82%A3%E4%BA%9B%E5%B9%B4%E6%88%91%E8%BF%98%E4%B8%8D%E6%87%82IList%EF%BC%8CICollection%EF%BC%8CIEnumerable%EF%BC%8CIEnumerator%EF%BC%8CIQueryable/">那些年我还不懂：IList，ICollection，IEnumerable，IEnumerator，IQueryable</a>
+    <h1 class="article-title" itemprop="name">
+      postgre下位展开写法
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/06/24/postgre%E4%B8%8B%E4%BD%8D%E5%B1%95%E5%BC%80%E5%86%99%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2018-06-24T01:35:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">WITH RECURSIVE T AS</span><br><span class="line">(SELECT p_org_type</span><br><span class="line">        , p_org_cd</span><br><span class="line">		, c_org_type</span><br><span class="line">		, c_org_cd</span><br><span class="line">   FROM com_int_orgstrc</span><br><span class="line">  WHERE p_org_type &#x3D; &#39;387&#39;</span><br><span class="line">    AND p_org_cd &#x3D; &#39;0000&#39;</span><br><span class="line"> UNION ALL</span><br><span class="line"> SELECT a.p_org_type</span><br><span class="line">        , a.p_org_cd</span><br><span class="line">		, a.c_org_type</span><br><span class="line">		, a.c_org_cd</span><br><span class="line">   FROM com_int_orgstrc a</span><br><span class="line">        , T b</span><br><span class="line">  WHERE a.p_org_type &#x3D; b.c_org_type</span><br><span class="line">    AND a.p_org_cd &#x3D; b.c_org_cd</span><br><span class="line">)</span><br><span class="line">SELECT * FROM T</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">C#</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Postgre</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://qr.topscan.com/api.php?text=http://yoursite.com/2018/06/24/postgre%E4%B8%8B%E4%BD%8D%E5%B1%95%E5%BC%80%E5%86%99%E6%B3%95/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/24/StringFormat%E5%A4%9A%E5%AD%97%E6%AE%B5in%E5%86%99%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2019-07-24T05:35:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-24</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2018/06/24/psql%E7%94%A8%E6%B3%95-20200324/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          psql用法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/15/C#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6%E5%92%8C%E5%A7%94%E6%89%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C#自定义事件和委托</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/24/StringFormat%E5%A4%9A%E5%AD%97%E6%AE%B5in%E5%86%99%E6%B3%95/">StringFormat多字段in写法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">C#</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#参考代码"><span class="toc-number">1.</span> <span class="toc-text">参考代码</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/08/15/C#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6%E5%92%8C%E5%A7%94%E6%89%98/" class="archive-article-date">
-  	<time datetime="2016-08-15T05:35:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-15</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/15/C#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6%E5%92%8C%E5%A7%94%E6%89%98/">C#自定义事件和委托</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">C#</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -316,9 +364,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

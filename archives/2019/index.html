@@ -6,19 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>C#自定义事件和委托 | LH.Chen的博客</title>
+  <title>Archives: 2019 | LH.Chen的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在windows 编程中用到最多的就是控件的时间了，微软给我们很好的方式，把注意力放到事件执行方法的设计和编码上，但是但我们真正弄懂了事件的真正出发执行原理的话，对我们的编程的提高真是非常榜的，例如在windows编程中 如果我单击了一个button按钮触发了button 的click事件  Button1_Click(){}  ， 但是有时候我们编程的时候，不但想要触发button 的单击事件，">
-<meta property="og:type" content="article">
-<meta property="og:title" content="C#自定义事件和委托">
-<meta property="og:url" content="http://yoursite.com/2020/03/24/C#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6%E5%92%8C%E5%A7%94%E6%89%98/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="LH.Chen的博客">
+<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
 <meta property="og:site_name" content="LH.Chen的博客">
-<meta property="og:description" content="在windows 编程中用到最多的就是控件的时间了，微软给我们很好的方式，把注意力放到事件执行方法的设计和编码上，但是但我们真正弄懂了事件的真正出发执行原理的话，对我们的编程的提高真是非常榜的，例如在windows编程中 如果我单击了一个button按钮触发了button 的click事件  Button1_Click(){}  ， 但是有时候我们编程的时候，不但想要触发button 的单击事件，">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-03-24T08:34:39.874Z">
-<meta property="article:modified_time" content="2016-08-15T05:35:58.000Z">
 <meta property="article:author" content="LH.Chen">
-<meta property="article:tag" content="C#">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="LH.Chen的博客" type="application/atom+xml">
@@ -159,82 +154,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-C#自定义事件和委托" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      C#自定义事件和委托
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/09/08/%E9%82%A3%E4%BA%9B%E5%B9%B4%E6%88%91%E8%BF%98%E4%B8%8D%E6%87%82IList%EF%BC%8CICollection%EF%BC%8CIEnumerable%EF%BC%8CIEnumerator%EF%BC%8CIQueryable/" class="archive-article-date">
+  	<time datetime="2019-09-08T05:15:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-08</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/09/08/%E9%82%A3%E4%BA%9B%E5%B9%B4%E6%88%91%E8%BF%98%E4%B8%8D%E6%87%82IList%EF%BC%8CICollection%EF%BC%8CIEnumerable%EF%BC%8CIEnumerator%EF%BC%8CIQueryable/">那些年我还不懂：IList，ICollection，IEnumerable，IEnumerator，IQueryable</a>
     </h1>
   
 
-        
-        <a href="/2020/03/24/C#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6%E5%92%8C%E5%A7%94%E6%89%98/" class="archive-article-date">
-  	<time datetime="2020-03-24T08:34:39.874Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在windows 编程中用到最多的就是控件的时间了，微软给我们很好的方式，把注意力放到事件执行方法的设计和编码上，但是但我们真正弄懂了事件的真正出发执行原理的话，对我们的编程的提高真是非常榜的，例如在windows编程中 如果我单击了一个button按钮触发了button 的click事件  Button1_Click(){}  ， 但是有时候我们编程的时候，不但想要触发button 的单击事件，我还想要把其他的时间也要调用下来顺序执行，要实现这种方式，除了在方法最后对其他方法的调用，还可以利用将其他需要顺序执行的方法封装到button的click 事件的委托对象中，这样就能够顺序执行毁掉方法列表中的程序了，而这种方式的实现是以清楚事件触发和委托的调用为前提的。</p>
-<pre><code>事件是类和对象向外界发出的消息，事件的执行是通过事件委托的方式，调用我们所准备好的处理方法，而是先消息的响应的。要响应某些事件并针对某些事件执行我们意定的方法，需要做到以下几步：
-
-    1、声明事件委托。
-
-    2、声明事件。
-
-    3、添加事件的触发方法。
-
-    4、添加事件的处理程序（响应事件的方法）。
-
-    5、将指定的事件处理程序邦定到要处理的事件上（订阅事件）。
-
-    6、用户信息操作，并触发事件（调用事件的触发方法）。
-
-    7、通过事件委托的回调，执行我们需要的事件处理程序。
-
-  下面我们举一个简单的自定义事件处理程序的例子（控制台程序）</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">namespace 事件\</span><br><span class="line">   &#123;\</span><br><span class="line">    &#x2F;&#x2F;发布事件的类\</span><br><span class="line">    public class TestEventSource\</span><br><span class="line">    &#123;\</span><br><span class="line">        &#x2F;&#x2F;定义事件参数类\</span><br><span class="line">        public class TestEventArgs : EventArgs\</span><br><span class="line">        &#123;\</span><br><span class="line">            public readonly char KeyToRaiseEvent;\</span><br><span class="line">            public TestEventArgs(char keyToRaiseEvent)\</span><br><span class="line">            &#123;\</span><br><span class="line">                KeyToRaiseEvent &#x3D; keyToRaiseEvent;\</span><br><span class="line">            &#125;\</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;定义delegate\</span><br><span class="line">        public delegate void TestEventHandler(object sender, TestEventArgs e);\</span><br><span class="line">        &#x2F;&#x2F;用event 关键字声明事件对象\</span><br><span class="line">        public event TestEventHandler TestEvent;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;事件触发方法\</span><br><span class="line">        protected virtual void OnTestEvent(TestEventArgs e)\</span><br><span class="line">        &#123;\</span><br><span class="line">            if (TestEvent !&#x3D; null)\</span><br><span class="line">                TestEvent(this, e);\</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;引发事件\</span><br><span class="line">        public void RaiseEvent(char keyToRaiseEvent)\</span><br><span class="line">        &#123;\</span><br><span class="line">            TestEventArgs e &#x3D; new TestEventArgs(keyToRaiseEvent);\</span><br><span class="line">            OnTestEvent(e);\</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;\</span><br><span class="line">    &#x2F;&#x2F;监听事件的类\</span><br><span class="line">    public class TestEventListener\</span><br><span class="line">    &#123;\</span><br><span class="line">        &#x2F;&#x2F;定义处理事件的方法，他与声明事件的delegate具有相同的参数和返回值类型\</span><br><span class="line">        public void KeyPressed(object sender, TestEventSource.TestEventArgs e)\</span><br><span class="line">        &#123;\</span><br><span class="line">            Console.WriteLine(&quot;发送者：&#123;0&#125;，所按得健为：&#123;1&#125;&quot;, sender, e.KeyToRaiseEvent);\</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;订阅事件\</span><br><span class="line">        public void Subscribe(TestEventSource evenSource)\</span><br><span class="line">        &#123;\</span><br><span class="line">            evenSource.TestEvent +&#x3D; new TestEventSource.TestEventHandler(KeyPressed);\</span><br><span class="line">        &#125;\</span><br><span class="line">        &#x2F;&#x2F;取消订阅事件\</span><br><span class="line">        public void UnSubscribe(TestEventSource evenSource)\</span><br><span class="line">        &#123;\</span><br><span class="line">            evenSource.TestEvent -&#x3D; new TestEventSource.TestEventHandler(KeyPressed);\</span><br><span class="line">        &#125;\</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;测试类\</span><br><span class="line">    public class Test\</span><br><span class="line">    &#123;\</span><br><span class="line">        public static void Main()\</span><br><span class="line">        &#123;\</span><br><span class="line">            &#x2F;&#x2F;创建事件源对象\</span><br><span class="line">            TestEventSource es &#x3D; new TestEventSource();\</span><br><span class="line">            &#x2F;&#x2F;创建监听对象\</span><br><span class="line">            TestEventListener el &#x3D; new TestEventListener();\</span><br><span class="line">            &#x2F;&#x2F;订阅事件\</span><br><span class="line">            Console.WriteLine(&quot;订阅事件\n&quot;);\</span><br><span class="line">            el.Subscribe(es);\</span><br><span class="line">            &#x2F;&#x2F;引发事件\</span><br><span class="line">            Console.WriteLine(&quot;输入一个字符，再按enter键&quot;);\</span><br><span class="line">            string s &#x3D; Console.ReadLine();\</span><br><span class="line">            es.RaiseEvent(s.ToCharArray()[0]);\</span><br><span class="line">            &#x2F;&#x2F;取消订阅事件\</span><br><span class="line">            Console.WriteLine(&quot;\n取消订阅事件\n&quot;);\</span><br><span class="line">            el.UnSubscribe(es);</span><br><span class="line"></span><br><span class="line">            &#x2F;&#x2F;引发事件\</span><br><span class="line">            Console.WriteLine(&quot;输入一个字符，再按enter健&quot;);\</span><br><span class="line">            s &#x3D; Console.ReadLine();\</span><br><span class="line">            es.RaiseEvent(s.ToCharArray()[0]);</span><br><span class="line"></span><br><span class="line">        &#125;\</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="订阅事件"><a href="#订阅事件" class="headerlink" title="订阅事件"></a>订阅事件</h2><p>输入一个字符，再按enter键<br>aaaa<br>发送者：事件.TestEventSource，所按得健为：a</p>
-<h2 id="取消订阅事件"><a href="#取消订阅事件" class="headerlink" title="取消订阅事件"></a>取消订阅事件</h2><p>输入一个字符，再按enter健</p>
-<pre><code>  TestEventSource类。他就相当于windows控件类一样，是事件的源，里面包含有事件的声明，以及存储调用参数的事件参数类，以及事件的触发方法。       
-
- TestEventListener类。他提供了事件处理程序，并实现了事件处理程序和事件对象的邦定，当然时间处理程序可以放在别处， 跟邦定程序（订阅事件）放在一起便于理解和调用
-
-Test 类，实例化自定义事件的事件源对象，并调用 TestEventListener类中的Subscribe(es);方法进行事件对象和事件处理程序的邦定（订阅事件），调用 TestEventSource类中的RaiseEvent(char keyToRaiseEvent)引发对象，并有对象所指定的委托回调处理事件。完成整个自定义事件。
-
-   其中   RaiseEvent(char keyToRaiseEvent)      就相当于main()一样是自定义事件的执行入口，       从这个法开始---〉调用事件委托----〉查找订阅事件程序找到事件所封装的方法集----〉由委托回调事件处理程序并传递参数---〉执行事件处理程序。</code></pre>
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -246,123 +195,57 @@ Test 类，实例化自定义事件的事件源对象，并调用 TestEventListe
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://qr.topscan.com/api.php?text=http://yoursite.com/2020/03/24/C#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6%E5%92%8C%E5%A7%94%E6%89%98/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
   
-<nav id="article-nav">
-  
-    <a href="/2020/03/24/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Hello World
-        
-      </div>
-    </a>
-  
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/07/24/StringFormat%E5%A4%9A%E5%AD%97%E6%AE%B5in%E5%86%99%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2019-07-24T05:35:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-24</time>
+</a>
         </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#订阅事件"><span class="toc-number">1.</span> <span class="toc-text">订阅事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#取消订阅事件"><span class="toc-number">2.</span> <span class="toc-text">取消订阅事件</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/07/24/StringFormat%E5%A4%9A%E5%AD%97%E6%AE%B5in%E5%86%99%E6%B3%95/">StringFormat多字段in写法</a>
+    </h1>
+  
+
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">C#</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+
         </div>
-        
-    </div>
-</aside>
-
-
-
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
   
   
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -385,8 +268,8 @@ Test 类，实例化自定义事件的事件源对象，并调用 TestEventListe
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
@@ -467,11 +350,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Postgre</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">Postgre</a>
               </li>
             
             <div class="clearfix"></div>

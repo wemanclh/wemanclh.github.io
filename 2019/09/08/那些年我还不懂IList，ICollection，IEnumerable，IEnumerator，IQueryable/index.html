@@ -6,20 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hello World | LH.Chen的博客</title>
+  <title>那些年我还不懂：IList，ICollection，IEnumerable，IEnumerator，IQueryable | LH.Chen的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; 转载sujing910206 最后发布于2012-08-05 22:39:15 阅读数 8164  收藏 展开 1、首先看一个简单的例子 int[] myArray &#x3D; { 1, 32, 43, 343 }; IEnumerator myie &#x3D; myArray.GetEnum">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2020/03/24/hello-world/index.html">
+<meta property="og:title" content="那些年我还不懂：IList，ICollection，IEnumerable，IEnumerator，IQueryable">
+<meta property="og:url" content="http://yoursite.com/2019/09/08/%E9%82%A3%E4%BA%9B%E5%B9%B4%E6%88%91%E8%BF%98%E4%B8%8D%E6%87%82IList%EF%BC%8CICollection%EF%BC%8CIEnumerable%EF%BC%8CIEnumerator%EF%BC%8CIQueryable/index.html">
 <meta property="og:site_name" content="LH.Chen的博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; 转载sujing910206 最后发布于2012-08-05 22:39:15 阅读数 8164  收藏 展开 1、首先看一个简单的例子 int[] myArray &#x3D; { 1, 32, 43, 343 }; IEnumerator myie &#x3D; myArray.GetEnum">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-03-24T08:34:39.879Z">
-<meta property="article:modified_time" content="2020-03-22T02:15:58.000Z">
+<meta property="og:image" content="http://images.cnblogs.com/cnblogs_com/edison1105/201207/201207302334219663.png">
+<meta property="og:image" content="http://images.cnblogs.com/cnblogs_com/edison1105/201207/201207302334245010.png">
+<meta property="og:image" content="http://images.cnblogs.com/cnblogs_com/edison1105/201207/201207302334247518.png">
+<meta property="article:published_time" content="2019-09-08T05:15:58.000Z">
+<meta property="article:modified_time" content="2020-03-25T03:10:13.486Z">
 <meta property="article:author" content="LH.Chen">
-<meta property="article:tag" content="想法">
+<meta property="article:tag" content="C#">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://images.cnblogs.com/cnblogs_com/edison1105/201207/201207302334219663.png">
   
     <link rel="alternative" href="/atom.xml" title="LH.Chen的博客" type="application/atom+xml">
   
@@ -159,39 +163,69 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-那些年我还不懂IList，ICollection，IEnumerable，IEnumerator，IQueryable" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      那些年我还不懂：IList，ICollection，IEnumerable，IEnumerator，IQueryable
     </h1>
   
 
         
-        <a href="/2020/03/24/hello-world/" class="archive-article-date">
-  	<time datetime="2020-03-24T08:34:39.879Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-24</time>
+        <a href="/2019/09/08/%E9%82%A3%E4%BA%9B%E5%B9%B4%E6%88%91%E8%BF%98%E4%B8%8D%E6%87%82IList%EF%BC%8CICollection%EF%BC%8CIEnumerable%EF%BC%8CIEnumerator%EF%BC%8CIQueryable/" class="archive-article-date">
+  	<time datetime="2019-09-08T05:15:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>============================================================</p>
+<p>转载<a href="https://me.csdn.net/sujing910206" target="_blank" rel="noopener">sujing910206</a> 最后发布于2012-08-05 22:39:15 阅读数 8164  收藏</p>
+<p>展开</p>
+<p>1、首先看一个简单的例子</p>
+<p>int[] myArray = { 1, 32, 43, 343 }; IEnumerator myie = myArray.GetEnumerator();<br>            myie.Reset(); while (myie.MoveNext())<br>            { int i = (int)myie.Current; Console.WriteLine(“Value: {0}”, i);<br>            }</p>
+<p>相信很多人都不会像上面这样去遍历myArray这个数组，通常我们这样会这样做</p>
+<p>  foreach (int item in myArray) Console.WriteLine(item.ToString());</p>
+<p>在大部分的情况下，很多人会使用for和foreach来遍历数组，而对于上面的语法却用的很少，但是对foreach的具体来历还很模糊！</p>
+<p>2、理解foreach</p>
+<p>大家都知道要实现foreach的必须要实现IEnumerable和IEnumerator的接口，只有实现了它们，才能实现遍历，所以要讲foreach的来历，必须要把那两个接口给搞清楚点！</p>
+<p>这边也想说明一点的是：如果对这两个接口有了一定的了解后，只要实现那个GetEnumerator方法即可，而不需要实现于IEnumerable接口，这只是针对对这两个接口有一定了解的朋友！</p>
+<blockquote>
+<p>2.1 IEnumerable</p>
+<p>具体的作用：就是使实现这个接口的对象成为可枚举类型。</p>
+<p>IEnumerable接口包含一个GetEnumerator方法，返回值为IEnumerator的类型！代码如下：</p>
+<p>  public class MyColors : IEnumerable { string[] colors = { “Red”, “Yellow”, “Biue” }; public IEnumerator GetEnumerator()<br>        { return colors.GetEnumerator();<br>        }<br>    }</p>
+<p>那么我们在客户端进行调用的时候就可以这样做了！</p>
+<p>  MyColors colors = new MyColors(); foreach (string item in colors) Console.WriteLine(item);</p>
+<p>这样就能使用实现这个接口的对象进行foreach遍历了，就是这么简单的一个列子，这边可能有的人会有疑问，我们就实现了IEnumerable接口但却没实现IEnumerator接口，可是我们不是说只有实现了这两个接口才可以进行foreach遍历吗？可以这样说当使用forach进行遍历的时候，编译器会到这个对象的类中去寻找GetEnumerator方法，找到这个方法后返回这个一个IEnumerator的对象(枚举数)，而我这边返回的是”colors.GetEnumerator()”，是一个数组对象调用它本身中的”GetEnumerator”方法，所以说数组本身就实现了IEnumerator接口，那么两个接口都实现了，不就好实现foreach遍历了，其实在实现遍历枚举数的时候编译器会自动去调用数组中实现枚举数的类中的方法。</p>
+<p>2.2  IEnumerator</p>
+<p>接口的作用：实现可枚举数，首先看一下接口的定义：</p>
+<p><a href="http://images.cnblogs.com/cnblogs_com/edison1105/201207/201207302334204581.png" target="_blank" rel="noopener"><img src="http://images.cnblogs.com/cnblogs_com/edison1105/201207/201207302334219663.png" alt="QQ截图20120730230335" title="QQ截图20120730230335"></a></p>
+<p>包含一个属性两个方法</p>
+<p>MoveNext → 把当前的项移动到下一项(类似于索引值)，返回一个bool值，这个bool值用来检查当前项是否超出了枚举数的范围！</p>
+<p>Current → 获取当前项的值，返回一个object的类型(这边会涉及到装箱和拆箱的问题 → 后面讲泛型的时候会涉及到)！</p>
+<p>Reset → 顾名思义也就是把一些值恢复为默认值，比如把当前项恢复到默认状态值！</p>
+<p>  public class MyIEnumerator : IEnumerator { public MyIEnumerator(string[] colors)<br>        { this.colors = new string[colors.Length]; for (int i = 0; i &lt; this.colors.Length; i++) this.colors[i] = colors[i];<br>        } string[] colors; //定义一个数组，用来存储数据 int position = -1; //定义当前项的默认值，也就是索引值，一开始认识数组的索引从”0”开始，<br>        //怎么默认设置他为”-1”呢，最后才想明白，这样设置是合情合理的！ public object Current //根据当前项获取相应的值 { get { return colors[position]; //返回当前项的值，但是会做一个装箱的操作！ }<br>       } public bool MoveNext() //移动到下一项 { if (position &lt; colors.Length - 1) //这就是设置默认值为-1的根据 {<br>                position++; return true;<br>          } else { return false;<br>          }<br>        } //重置当前项的值，恢复为默认值 public void Reset()<br>        { this.position = -1;<br>        }<br>    }</p>
+<p>上面讲到的IEnumerable接口中GetEnumerator方法是获取要遍历的枚举数，在我们没有创建自己的遍历枚举数的类时，我们使用的是Array的遍历枚举数的方法(关于数组的可枚举类型和枚举数会在下一篇讲到)，但这个有的时候不一定适合我们，我们需要为自己定制一个更合适的，所以我们要创建自己的枚举数类(也就是上面的代码)，把第三点和第四点的代码合并起来(改动一点代码)，如下：</p>
+<p>  public class MyColors //: IEnumerable { string[] colors = { “Red”, “Yellow”, “Biue” }; public IEnumerator GetEnumerator()<br>            { return new MyIEnumerator(colors);<br>            }<br>        }</p>
+</blockquote>
+<p>3、关于可枚举类型和枚举数</p>
+<p>①可枚举类型 → 实现IEnumerable接口，可以不需要直接实现这个接口，但必须有个GetEnumerator方法，返回值类型必须为IEnumerator类型，也就是第四点最后一段代码中接口注释的那种写法！</p>
+<p>②枚举数 → 实现IEnumerator接口，实现全部方法，首先是调用GetEnumerator返回一个类型为IEnumerator的枚举数，然后编译器会隐式的调用实现IEnumerator类中的方法和属性！</p>
+<p>总结：所以实现foreach遍历，必须达到上面的两种条件才能进行遍历对象，他们可以写在一起也可以分开，最好是分开，进行职责分离，一个类干一件事总归是好事！也满足面向对象的单一指责设计原则。</p>
+<p>下面的代码示例演示如何实现自定义集合的 IEnumerable 和 IEnumerator 接口（代码来自MSDN）</p>
+<p>using System; using System.Collections; using System.Collections.Generic; using System.Linq; using System.Text; using System.Threading.Tasks; namespace ConsoleApplication1<br>{ public class Person { public Person(string fName, string lName)<br>        { this.firstName = fName; this.lastName = lName;<br>        } public string firstName; public string lastName;<br>    } public class People : IEnumerable { private Person[] _people; public People(Person[] pArray)<br>        {<br>            _people = new Person[pArray.Length]; for (int i = 0; i &lt; pArray.Length; i++)<br>            {<br>                _people[i] = pArray[i];<br>            }<br>        } IEnumerator IEnumerable.GetEnumerator()<br>        { return (IEnumerator)GetEnumerator();<br>        } public PeopleEnum GetEnumerator()<br>        { return new PeopleEnum(_people);<br>        }<br>    } public class PeopleEnum : IEnumerator { public Person[] _people; // Enumerators are positioned before the first element<br>        // until the first MoveNext() call. int position = -1; public PeopleEnum(Person[] list)<br>        {<br>            _people = list;<br>        } public bool MoveNext()<br>        {<br>            position++; return (position &lt; _people.Length);<br>        } public void Reset()<br>        {<br>            position = -1;<br>        } object IEnumerator.Current<br>        { get { return Current;<br>            }<br>        } public Person Current<br>        { get { try { return _people[position];<br>                } catch (IndexOutOfRangeException)<br>                { throw new InvalidOperationException();<br>                }<br>            }<br>        }<br>    } class Program { static void Main(string[] args)<br>        { Person[] peopleArray = new Person[3]<br>            { new Person(“John”, “Smith”), new Person(“Jim”, “Johnson”), new Person(“Sue”, “Rabon”),<br>            }; People peopleList = new People(peopleArray); foreach (Person p in peopleList) Console.WriteLine(p.firstName + “ “ + p.lastName);<br>        }<br>    }<br>}</p>
+<p>无图无真相</p>
+<p><a href="http://images.cnblogs.com/cnblogs_com/edison1105/201207/201207302334212172.png" target="_blank" rel="noopener"><img src="http://images.cnblogs.com/cnblogs_com/edison1105/201207/201207302334245010.png" alt="QQ截图20120730223046" title="QQ截图20120730223046"></a></p>
+<p>我并非标题党，下面介绍IList，ICollection，IQueryable</p>
+<p>1、IList 是 ICollection 接口的子代，并且是所有非泛型列表的基接口。IList 实现有三种类别：只读、固定大小和可变大小。无法修改只读 IList。固定大小的 IList 不允许添加或移除元素，但允许修改现有元素。可变大小的 IList 允许添加、移除和修改元素。</p>
+<p>2、ICollection 接口是 System.Collections 命名空间中类的基接口。ICollection 接口扩展 IEnumerable；IDictionary 和 IList 则是扩展 ICollection 的更为专用的接口。 IDictionary 实现是键/值对的集合，如 Hashtable 类。 IList 实现是值的集合，其成员可通过索引访问，如 ArrayList 类。  某些集合（如 Queue 类和 Stack 类）限制对其元素的访问，它们直接实现 ICollection 接口。  如果 IDictionary 接口和 IList 接口都不能满足所需集合的要求，则从 ICollection 接口派生新集合类以提高灵活性。定义所有非泛型集合的大小、枚举器和同步方法。</p>
+<p>3、IQueryable 提供对未指定数据类型的特定数据源的查询进行计算的功能，IQueryable 接口由查询提供程序实现。 该接口只能由同时实现 IQueryable(Of T) 的提供程序实现。 如果该提供程序不实现 IQueryable(Of T)，则无法对提供程序数据源使用标准查询运算符。 IQueryable 接口继承 IEnumerable 接口，以便在前者表示一个查询时可以枚举该查询的结果。 枚举强制执行与 IQueryable 对象关联的表达式树。 “执行表达式树”的定义是查询提供程序所特有的。 例如，它可能涉及将表达式树转换为适用于基础数据源的查询语言。 在调用 Execute 方法时将执行不返回可枚举结果的查询。</p>
+<p>不好意思,这里就先粗略的介绍一下了,都说我很懒了<img src="http://images.cnblogs.com/cnblogs_com/edison1105/201207/201207302334247518.png" alt="吐舌笑脸">，明天还要上班，下次再续…</p>
 
       
 
@@ -226,7 +260,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">想法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">C#</a>
         		</li>
       		
 		</ul>
@@ -282,7 +316,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://qr.topscan.com/api.php?text=http://yoursite.com/2020/03/24/hello-world/" alt="微信分享二维码">
+      <img src="http://qr.topscan.com/api.php?text=http://yoursite.com/2019/09/08/%E9%82%A3%E4%BA%9B%E5%B9%B4%E6%88%91%E8%BF%98%E4%B8%8D%E6%87%82IList%EF%BC%8CICollection%EF%BC%8CIEnumerable%EF%BC%8CIEnumerator%EF%BC%8CIQueryable/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -296,18 +330,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/03/24/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/03/22/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Markdown基本语法
+          Hello World
         
       </div>
     </a>
   
   
-    <a href="/2020/03/24/C#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6%E5%92%8C%E5%A7%94%E6%89%98/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">C#自定义事件和委托</div>
+    <a href="/2019/07/24/StringFormat%E5%A4%9A%E5%AD%97%E6%AE%B5in%E5%86%99%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">StringFormat多字段in写法</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -334,7 +368,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
@@ -458,11 +492,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Postgre</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">Postgre</a>
               </li>
             
             <div class="clearfix"></div>
